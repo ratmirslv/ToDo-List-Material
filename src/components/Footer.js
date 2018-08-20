@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Footer.css";
 import Button from "@material-ui/core/Button";
+
 class Footer extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,6 @@ class Footer extends Component {
 
   handleChange = event => {
     const title = event.target.value;
-
     this.setState({ title });
   };
   handleSubmit = event => {
@@ -32,7 +32,12 @@ class Footer extends Component {
           placeholder="Введите задачу"
           onChange={this.handleChange}
         />
-        <Button variant="contained" color="primary" onClick={this.handleSubmit}>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ backgroundColor: "#206ed3" }}
+          onClick={this.handleSubmit}
+        >
           Добавить задачу
         </Button>
       </form>

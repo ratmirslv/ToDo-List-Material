@@ -1,0 +1,20 @@
+.TodoForm {
+  display: flex;
+  background-color: #fafafa;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.TodoForm input {
+  flex: 1;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.TodoForm input:focus {
+  border: 1px solid #206ed3;
+}
+
+.TodoForm button {
+  margin-left: 10px;
+}
