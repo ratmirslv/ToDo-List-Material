@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Footer.css";
 import Button from "@material-ui/core/Button";
+import { connect } from "react-redux";
+import { addTodo } from "../actions";
 
 class Footer extends Component {
   constructor(props) {
@@ -15,11 +17,12 @@ class Footer extends Component {
     this.setState({ title });
   };
   handleSubmit = event => {
+    let { addTodo } = this.props;
     event.preventDefault();
     const title = this.state.title;
 
     if (title) {
-      this.props.handleAdd(title);
+      addTodo(title);
       this.setState({ title: "" });
     }
   };
@@ -45,4 +48,7 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export default connect(
+  null,
+  { addTodo }
+)(Footer);

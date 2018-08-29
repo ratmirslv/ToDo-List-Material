@@ -2,7 +2,7 @@ const todos = [
   {
     id: 1,
     title: "Купить хлеба",
-    completed: true
+    completed: false
   },
   {
     id: 2,

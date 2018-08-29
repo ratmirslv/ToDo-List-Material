@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./TodoList.css";
 import Todo from "./Todo";
+import { connect } from "react-redux";
 
 class TodoList extends Component {
   constructor(props) {
@@ -9,7 +10,6 @@ class TodoList extends Component {
   }
 
   render() {
-    let { handleToggle, handleDelete } = this.props;
     return (
       <div className="Todolist">
         {this.props.todos.map(todo => (
@@ -18,8 +18,6 @@ class TodoList extends Component {
             id={todo.id}
             title={todo.title}
             completed={todo.completed}
-            handleToggle={handleToggle}
-            handleDelete={handleDelete}
           />
         ))}
       </div>
@@ -27,4 +25,6 @@ class TodoList extends Component {
   }
 }
 
-export default TodoList;
+export default connect(store => ({
+  todos: store.todos
+}))(TodoList);

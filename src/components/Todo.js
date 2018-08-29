@@ -3,6 +3,8 @@ import "./Todo.css";
 import Checkbox from "@material-ui/core/Checkbox";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
+import { connect } from "react-redux";
+import { toggleTodo, deleteTodo } from "../actions";
 
 class Todo extends Component {
   constructor(props) {
@@ -10,12 +12,12 @@ class Todo extends Component {
     this.state = {};
   }
   onCangeItem = () => {
-    let { handleToggle, id } = this.props;
-    handleToggle(id);
+    let { id, toggleTodo } = this.props;
+    toggleTodo(id);
   };
   onDeleteItem = () => {
-    let { handleDelete, id } = this.props;
-    handleDelete(id);
+    let { id, deleteTodo } = this.props;
+    deleteTodo(id);
   };
 
   render() {
@@ -36,4 +38,7 @@ class Todo extends Component {
   }
 }
 
-export default Todo;
+export default connect(
+  null,
+  { toggleTodo, deleteTodo }
+)(Todo);

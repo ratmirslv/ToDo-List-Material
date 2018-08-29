@@ -2,6 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import todos from "./todos";
+import store from "./store";
+import { Provider } from "react-redux";
 
-ReactDOM.render(<App data={todos} />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
