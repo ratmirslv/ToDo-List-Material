@@ -1,8 +1,8 @@
 const todos = [
   {
     id: 1,
-    title: "Купить хлеба",
-    completed: false
+    title: "Купить хлеб",
+    completed: true
   },
   {
     id: 2,
